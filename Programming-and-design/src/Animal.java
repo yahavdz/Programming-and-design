@@ -3,7 +3,7 @@ public abstract class Animal implements Seasonable,Comparable {
     public Color color;
     public Season season;
 
-    /**ss
+    /**
      * @return the current season
      */
     public Season getCurrentSeason() {
