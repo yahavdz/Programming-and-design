@@ -1,6 +1,7 @@
 public class Caribou extends Animal{
+    String status;
 
-    //TODO how to add the color based on the previous season
+    //TODO how to add the color based on the previous season (?)
     @Override
     public String toString() {
         return "Caribou{" +
@@ -15,13 +16,19 @@ public class Caribou extends Animal{
         season.next();
         if(season == Season.WINTER){
            color = color.WHITE;
-           //TODO Migration south
+           status = "Migration south";
         }
         if(season == Season.SPRING){
-            color = color.BROWN;        }
-        if(season == Season.FALL){
-            //TODO Migration south
+            color = color.BROWN;
+            status = "in south";
         }
+        if(season == Season.FALL){
+            status = "in north";
+        }
+        if(season == Season.SUMMER){
+            status = "Migration north";
+        }
+
         return season;
     }
 }

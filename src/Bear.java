@@ -1,5 +1,5 @@
 public class Bear extends Animal{
-
+    String status;
     /**
      * @return A string describing the bear's change in the current season as well as the object's data
      */
@@ -43,15 +43,19 @@ public class Bear extends Animal{
         season.next();
         if(season == Season.WINTER){
             weight = (int) Math.floor(weight*0.8);
+            status = "sleep";
         }
         if(season == Season.SPRING){
             weight = (int) Math.floor(weight*0.75);
+            status = "wake";
         }
         if(season == Season.FALL){
             weight = (int) Math.floor(weight*(5/4));
+            status = "wake";
         }
         if(season == Season.SUMMER){
             weight = (int) Math.floor(weight*(4/3));
+            status = "wake";
         }
         color = Color.BROWN;
         return season;
