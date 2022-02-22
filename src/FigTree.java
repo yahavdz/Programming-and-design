@@ -1,5 +1,10 @@
 public class FigTree extends Tree {
 
+    /**
+     * ctor for a fig tree
+     * @param height of the tree
+     * @param season the current season
+     */
     FigTree(int height, Season season) {
         super(height,season,null);
 

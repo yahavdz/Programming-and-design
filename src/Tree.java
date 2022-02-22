@@ -6,15 +6,15 @@ public abstract class Tree implements Seasonable,Comparable  {
     protected boolean leaves;
     protected boolean fruit;
 
-    // TODO: Add auxiliary fields and functions.
-
-
     Tree(int height, Season season, Color leavesColor){
         this.height = height;
         this.season = season;
         this.leavesColor = leavesColor;
     }
 
+    /**
+     * @return the current season of the tree
+     */
     @Override
     public Season getCurrentSeason() {
         return season;
@@ -33,7 +33,6 @@ public abstract class Tree implements Seasonable,Comparable  {
 
     /**
      * Changes the current season of the tree to the next season
-     * @return the next season
      */
     public void changeSeason() {
         this.season = season.next() ;

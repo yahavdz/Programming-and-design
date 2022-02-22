@@ -1,6 +1,10 @@
 public class OliveTree extends Tree {
 
-
+    /**
+     * ctor for an olive tree
+     * @param height of the tree
+     * @param season the current season
+     */
     OliveTree(int height, Season season) {
         super(height,season,Color.GREEN);
 
