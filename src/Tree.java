@@ -1,24 +1,42 @@
 public abstract class Tree implements Seasonable,Comparable  {
 
-    public int height;
-    public Color color;
-    public Season season;
+    protected int height;
+    protected Season season;
+    protected Color leavesColor;
+    protected boolean leaves;
+    protected boolean fruit;
+
+    // TODO: Add auxiliary fields and functions.
+
+
+    Tree(int height, Season season, Color leavesColor){
+        this.height = height;
+        this.season = season;
+        this.leavesColor = leavesColor;
+    }
+
+    @Override
+    public Season getCurrentSeason() {
+        return season;
+    }
 
     /**
      *Equates the height between objects
      * @param t Represents a tree-type object
      * @return
      */
-    public int compareTo(Tree t) {
-        return (this.height <t.height  ? -1 : ((this.height == t.height) ? 0 : 1));
+
+    @Override
+    public int compareTo(Object t) {
+        return (Integer.compare(this.height, ((Tree) t).height));
     }
 
     /**
      * Changes the current season of the tree to the next season
      * @return the next season
      */
-    public Season changeSeason() {
-        return season.next() ;
+    public void changeSeason() {
+        this.season = season.next() ;
     }
 
     /**
@@ -26,6 +44,15 @@ public abstract class Tree implements Seasonable,Comparable  {
      */
     @Override
     public String toString() {
-        return String.valueOf(height) + color.toString() + season.toString();
+        String result = "";
+        if (fruit)
+            result+= " I give fruit.";
+        result+= " My height is: "+ height;
+        if (!leaves)
+            result+= " and I have no leaves";
+        else
+            result+= " and My color is: "+ leavesColor;
+
+        return String.valueOf(height) + leavesColor.toString() + season.toString();
     }
 }
