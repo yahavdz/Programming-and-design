@@ -3,7 +3,7 @@ public class Caribou extends Animal{
 
     Caribou(int weight, Season season) {
         super(weight, season, Color.BROWN);
-        changeAndColorStatusBySeason();
+        changeColorAndStatusBySeason();
     }
 
     @Override
@@ -19,10 +19,10 @@ public class Caribou extends Animal{
     @Override
     public void changeSeason() {
         super.changeSeason();
-        changeAndColorStatusBySeason();
+        changeColorAndStatusBySeason();
     }
 
-    private void changeAndColorStatusBySeason() {
+    private void changeColorAndStatusBySeason() {
         switch (getCurrentSeason()) {
             case FALL:
                 status = "in north";
