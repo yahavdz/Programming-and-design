@@ -1,11 +1,18 @@
 public abstract class Animal implements Seasonable,Comparable {
-    public int weight;
-    public Color color;
-    public Season season;
+    protected int weight;
+    private Season season;
+    protected Color color;
 
-    /**ss
+    Animal(int weight, Season season, Color color){
+        this.weight = weight;
+        this.season = season;
+        this.color = color;
+    }
+
+    /**
      * @return the current season
      */
+    @Override
     public Season getCurrentSeason() {
         return season;
     }
@@ -13,20 +20,19 @@ public abstract class Animal implements Seasonable,Comparable {
     /**
      * Equates the weight between objects
      * @param o Represents a animal-type object
-     * @return
+     * @return 1 if bigger, 0 if equal and -1 if smaller
      */
     @Override
     public int compareTo(Object o) {
-        return (this.weight <((Animal)o).weight  ? -1 : ((this.weight == ((Animal)o).weight) ? 0 : 1));
+        return (Integer.compare(this.weight, ((Animal) o).weight));
     }
 
     /**
      * Changes the current season of The Animal to next season
-     * @return the next season
      */
     @Override
-    public Season changeSeason() {
-       return season.next() ;
+    public void changeSeason() {
+       season = season.next() ;
     }
 
     /**
@@ -34,6 +40,6 @@ public abstract class Animal implements Seasonable,Comparable {
      */
     @Override
     public String toString() {
-        return String.valueOf(weight) + color.toString() + season.toString();
+        return "My weight is: " + weight + " and my color is: " + color + "\n";
     }
 }

@@ -1,4 +1,4 @@
 public interface Seasonable {
         Season getCurrentSeason();
-        Season changeSeason();
+        void changeSeason();
 }

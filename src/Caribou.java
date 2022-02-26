@@ -1,34 +1,43 @@
 public class Caribou extends Animal{
     String status;
 
-    //TODO how to add the color based on the previous season (?)
-    @Override
-    public String toString() {
-        return "Caribou{" +
-                "weight=" + weight +
-                ", the color has changed to =" + color +
-                ", season=" + season +
-                '}';
+    Caribou(int weight, Season season) {
+        super(weight, season, Color.BROWN);
+        changeAndColorStatusBySeason();
     }
 
     @Override
-    public Season changeSeason() {
-        season.next();
-        if(season == Season.WINTER){
-           color = color.WHITE;
-           status = "Migration south";
+    public String toString() {
+        Season season = getCurrentSeason();
+        String str = "Caribou: ";
+        if(season == Season.SUMMER || season == Season.WINTER){
+            str = str + status + ". ";
         }
-        if(season == Season.SPRING){
-            color = color.BROWN;
-            status = "in south";
-        }
-        if(season == Season.FALL){
-            status = "in north";
-        }
-        if(season == Season.SUMMER){
-            status = "Migration north";
-        }
+        return str + super.toString();
+    }
 
-        return season;
+    @Override
+    public void changeSeason() {
+        super.changeSeason();
+        changeAndColorStatusBySeason();
+    }
+
+    private void changeAndColorStatusBySeason() {
+        switch (getCurrentSeason()) {
+            case FALL:
+                status = "in north";
+                break;
+            case SPRING:
+                status = "in south";
+                color = Color.WHITE;
+                break;
+            case SUMMER:
+                status = "Migration north";
+                break;
+            case  WINTER:
+                status = "Migration south";
+                color = Color.BROWN;
+                break;
+        }
     }
 }

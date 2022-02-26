@@ -52,6 +52,6 @@ public abstract class Tree implements Seasonable,Comparable  {
         else
             result+= " and My color is: "+ leavesColor;
 
-        return String.valueOf(height) + leavesColor.toString() + season.toString();
+        return result + "\n";
     }
 }

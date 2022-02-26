@@ -23,6 +23,7 @@ public class OliveTree extends Tree {
     public String toString() {
         return  "Olive tree. " + super.toString();
         }
+
     @Override
     public void changeSeason() {
         super.changeSeason();

@@ -35,9 +35,10 @@ public class FigTree extends Tree {
     public String toString() {
         return  "Fig tree. " + super.toString();
         }
+
     @Override
     public void changeSeason() {
-       super.changeSeason();
+        super.changeSeason();
         switch (season){
             case WINTER :
                 leaves = false;
