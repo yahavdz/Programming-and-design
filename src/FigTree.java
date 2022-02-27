@@ -8,7 +8,7 @@ public class FigTree extends Tree {
     FigTree(int height, Season season) {
         super(height,season,null);
 
-        switch (season){
+        switch (getCurrentSeason()){
             case WINTER :
                 leaves = false;
                 fruit = false;
@@ -33,13 +33,13 @@ public class FigTree extends Tree {
 
     @Override
     public String toString() {
-        return  "Fig tree. " + super.toString();
+        return  "Fig tree." + super.toString();
         }
 
     @Override
     public void changeSeason() {
         super.changeSeason();
-        switch (season){
+        switch (getCurrentSeason()){
             case WINTER :
                 leaves = false;
                 height += 20;
