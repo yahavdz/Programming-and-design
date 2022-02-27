@@ -7,8 +7,8 @@ public class OliveTree extends Tree {
      */
     OliveTree(int height, Season season) {
         super(height,season,Color.GREEN);
-
-        switch (season){
+        this.leaves = true;
+        switch (getCurrentSeason()){
             case WINTER :
             case SPRING:
             case SUMMER:
@@ -21,20 +21,20 @@ public class OliveTree extends Tree {
 
     @Override
     public String toString() {
-        return  "Olive tree. " + super.toString();
+        return  "Olive tree." + super.toString();
         }
 
     @Override
     public void changeSeason() {
         super.changeSeason();
-        switch (season){
+        switch (getCurrentSeason()){
             case WINTER :
                 fruit = false;
                 height += 5;
                 break;
             case SPRING:
             case SUMMER:
-                height += 10;;
+                height += 10;
                 break;
             case FALL:
                 fruit = true;
