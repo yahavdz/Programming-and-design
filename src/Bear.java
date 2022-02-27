@@ -20,8 +20,7 @@ public class Bear extends Animal{
     /**
      * Changes the current season of The Bear to next season
      * and update his weight according to the current season
-     * @return the current season
-     */
+    */
     @Override
     public void changeSeason() {
         super.changeSeason();
@@ -33,10 +32,10 @@ public class Bear extends Animal{
             weight = (int) Math.floor(weight * 0.75);
         }
         if(season == Season.FALL){
-            weight = (int) Math.floor(weight*(5/4));
+            weight = (int) Math.floor(weight*(5.0/4));
         }
         if(season == Season.SUMMER){
-            weight = (int) Math.floor(weight*(4/3));
+            weight = (int) Math.floor(weight*(4.0/3));
         }
     }
 }

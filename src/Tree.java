@@ -23,7 +23,7 @@ public abstract class Tree implements Seasonable,Comparable  {
     /**
      *Equates the height between objects
      * @param t Represents a tree-type object
-     * @return
+     * @return compare value based on height
      */
 
     @Override
@@ -50,7 +50,7 @@ public abstract class Tree implements Seasonable,Comparable  {
         if (!leaves)
             result+= " and I have no leaves";
         else
-            result+= " and My color is: "+ leavesColor;
+            result+= " and my color is: "+ leavesColor;
 
         return result + "\n";
     }

@@ -29,14 +29,14 @@ public class Caribou extends Animal{
                 break;
             case SPRING:
                 status = "in south";
-                color = Color.WHITE;
+                color = Color.BROWN;
                 break;
             case SUMMER:
-                status = "Migration north";
+                status = "I am migrating north";
                 break;
             case  WINTER:
-                status = "Migration south";
-                color = Color.BROWN;
+                status = "I am migrating south";
+                color = Color.WHITE;
                 break;
         }
     }
